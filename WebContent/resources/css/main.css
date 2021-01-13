@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+/* Reset CSS */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+img {
+	width:50px;
+	height:50px;
+	border: 0;
+}
+
+/* Background Image */
+.wrap {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: url(../img/bg2.jpg) no-repeat center bottom;
+	background-size: cover;
+	overflow-y: auto;
+}
+
+/* header */
+.mainHeader {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	background-color: rgba(0, 0, 0, 0.5);
+	letter-spacing: 2px;
+}
+.mainHeader .loginBox{
+	text-align: right;
+	margin-right: 10px;
+}
+
+.mainHeader h3 {
+	flex: 1;
+	margin: 10px;
+	color: greenyellow;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 25px
+}
+
+.mainHeader a {
+	text-decoration: none;
+	color: greenyellow;
+	font-weight: bold;
+}
+
+.mainHeader a:hover {
+	text-decoration: underline;
+	color: greenyellow;
+	font-weight: bold;
+}
+
+/* menu */
+.mainCenter {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 100%;
+}
+
+.menu {
+	width: 350px;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.0);
+}
+
+.chapter {
+	margin: 5px;
+	padding: 5px;
+	color: greenyellow;
+	font-weight: bold;
+}
+
+.chapter a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+.chapter a:hover {
+	text-decoration: underline;
+	color: orange;
+	font-weight: bold;
+}
+
+/* content */
+.content {
+	flex-grow: 1;
+	height: 100%;
+	color: white;
+	padding: 10px;
+}
+
+.content .sector {
+	margin-bottom: 20px;
+	border: 1px solid gray;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content .sector h5 {
+	font-size: 15px;
+	color: orange;
+}
+/* .content table {width: 90%; border-collapse: collapse; font-size: small; }
+.content table, th, td {border: 1px solid white; text-align: center;} */
+.content th {
+	background-color: rgb(173, 176, 179);
+	color: black;
+	text-align: center;
+}
+
+.content td {
+	color: white;
+	text-align: center;
+}
+
+.content .error {
+	color: red;
+}
+
+/* footer */
+.mainFooter {
+	width: 100%;
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0.9);
+	font: 12px/3.3 verdana;
+	color: #fff;
+	letter-spacing: 2px;
+}
+
+.mainFooter span {
+	position: absolute;
+	right: 10px;
+	bottom: 0px;
+}
