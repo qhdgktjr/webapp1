@@ -25,7 +25,7 @@
 					<div class="sector">
 						<h5>헤더값 읽기</h5>
 							<div>
-								<a class="btn btn-info btn-sm" href="method1">브라우저 정보 얻기</a>
+								<a class="btn btn-info btn-sm" href="method2">브라우저 정보 얻기</a>
 							</div>
 					</div>
 				<!-- 섹터 구분 -->
