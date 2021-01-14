@@ -6,6 +6,8 @@
 		<li class="chapter">Ch01. <a href="<%=application.getContextPath() %>/ch01/content">Development Environment</a></li>
 		<li class="chapter">Ch02. <a href="<%=application.getContextPath() %>/ch02/content">Request Mapping</a></li>
 		<li class="chapter">Ch03. <a href="<%=application.getContextPath() %>/ch03/content">Request Parameter</a></li>
+		<li class="chapter">Ch05. <a href="<%=application.getContextPath() %>/ch05/content">Header / Cookie</a></li>
+		
 			
 	</ul>			
 </div>

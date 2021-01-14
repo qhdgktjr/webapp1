@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mycompany.webapp.dto.Ch03Dto;
+
 @Controller
 @RequestMapping("/ch03")
-public class ch03Controller {
+public class Ch03Controller {
 
-	private static final Logger logger = LoggerFactory.getLogger(ch03Controller.class);
+	private static final Logger logger = LoggerFactory.getLogger(Ch03Controller.class);
 	
 	@GetMapping("/content")
 	public String content() {
@@ -45,10 +47,10 @@ public class ch03Controller {
 			boolean param4, 
 			@DateTimeFormat(pattern="yyyy-MM-dd") Date param5) {
 		logger.info("param1 : " + arg1);
-		logger.info("param1 : " + arg2);
-		logger.info("param1 : " + param3);
-		logger.info("param1 : " + param4);
-		logger.info("param1 : " + param5);
+		logger.info("param2 : " + arg2);
+		logger.info("param3 : " + param3);
+		logger.info("param4 : " + param4);
+		logger.info("param5 : " + param5);
 		
 		return "ch03/content";
 	}
@@ -63,10 +65,22 @@ public class ch03Controller {
 			 @RequestParam(defaultValue="0.0") double param3,
 			 @RequestParam(defaultValue="0") boolean param4) {
 		logger.info("param1 : " + param1);
-		logger.info("param1 : " + param2);
-		logger.info("param1 : " + param3);
-		logger.info("param1 : " + param4);
+		logger.info("param2 : " + param2);
+		logger.info("param3 : " + param3);
+		logger.info("param4 : " + param4);
 		
+		return "ch03/content";
+	}
+	
+	/* class 컴파일 안될 시 클린 한번하기 */
+	@RequestMapping("/method4")
+	public String method4(Ch03Dto dto) {
+			
+		logger.info("param1 : " + dto.getParam1());
+		logger.info("param2 : " + dto.getParam2());
+		logger.info("param3 : " + dto.getParam3());
+		logger.info("param4 : " + dto.isParam4());
+		logger.info("param5 : " + dto.getParam5());
 		return "ch03/content";
 	}
 	

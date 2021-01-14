@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
 
-
+	<!-- 수정 시 항상 서버 재시작 -->
 	<!-- Root WebApplicationContext 설정 -->
 	<listener>
 		<!-- WebApplication이 WAS에 배치할 때 발생하는 이벤트를 처리하는 객체 등록 -->
@@ -17,6 +17,20 @@
 		<!-- /WEB-INF/파일경로 -->
 	</context-param>
 
+	<!-- POST 방식의 문자셋 인코딩 설정 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+			<init-param>
+				<param-name>encoding</param-name>
+				<param-value>UTF-8</param-value>
+			</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	<!-- WebApplicationContext 여러개 생성 -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>

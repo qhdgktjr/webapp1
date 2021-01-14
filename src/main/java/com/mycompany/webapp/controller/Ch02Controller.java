@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 /* 공통경로에서는 get,post맵핑은 불가 */
 @RequestMapping("/ch02")
-public class ch02Controller {
-	private static final Logger logger = LoggerFactory.getLogger(ch02Controller.class);
+public class Ch02Controller {
+	private static final Logger logger = LoggerFactory.getLogger(Ch02Controller.class);
 	
 		@RequestMapping("/content")
 		public String content() {
