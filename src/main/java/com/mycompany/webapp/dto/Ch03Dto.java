@@ -3,7 +3,6 @@ package com.mycompany.webapp.dto;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.RequestParam;
 
 public class Ch03Dto {
 	private String param1;
