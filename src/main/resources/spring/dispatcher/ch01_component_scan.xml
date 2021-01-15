@@ -13,8 +13,6 @@
 			expression="org.springframework.stereotype.Service" />
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
-
-
 	</context:component-scan>
 
 	<!-- component-scan에서 인식하지 못하는 @를 찾음 -->
@@ -28,5 +26,4 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-
 </beans>

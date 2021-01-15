@@ -46,6 +46,7 @@ public class Ch05Controller {
 						//WAS가 제공하는 요청 저장 객체
 	public String method2(HttpServletRequest request) {
 		logger.info("실행");
+			//메소드를 활용
 			 String userAgent = request.getHeader("User-Agent");
 		if (userAgent.contains("Edg")) {
 			logger.info("브라우저의 종류 : 엣지 ");
@@ -63,7 +64,7 @@ public class Ch05Controller {
 	@GetMapping("/method3")
 	public String method3(HttpServletRequest request,
 						  HttpServletResponse response) {
-		//쿠키생성
+		//쿠키생성, WA안에서 객체가 생성된다.
 		Cookie cookie1 = new Cookie("memberId", "winter");
 		Cookie cookie2 = new Cookie("loginStatus", "ok");
 		

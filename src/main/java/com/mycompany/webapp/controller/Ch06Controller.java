@@ -48,7 +48,7 @@ public class Ch06Controller {
 	@GetMapping("/boardList")
 	public String boardList() {
 		logger.info("게시물 목록 생성");
-				//뷰 이름이 아니기에 앞뒤에 안붙는다.
+				
 		return "ch06/boardList";
 	}
 }
