@@ -52,17 +52,7 @@ img {
 	font-size: 25px
 }
 
-.mainHeader a {
-	text-decoration: none;
-	color: greenyellow;
-	font-weight: bold;
-}
 
-.mainHeader a:hover {
-	text-decoration: underline;
-	color: greenyellow;
-	font-weight: bold;
-}
 
 /* menu */
 .mainCenter {
