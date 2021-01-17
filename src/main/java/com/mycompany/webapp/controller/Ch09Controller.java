@@ -59,7 +59,8 @@ public class Ch09Controller {
 			String saveDirPath = "D:/MyWorkspace/uploadfiles/";
 			String fileName = new Date().getTime() + "-" + originalFileName;
 			String filePath = saveDirPath + fileName;
-			// 파일객체는 파일경로를 가진 객체
+			// 파일객체는 파일경로를 가진 객체, 최종경로를 통해 폴더에 저장
+			
 			File file = new File(filePath);
 			try {
 				uphoto.transferTo(file);
@@ -75,7 +76,7 @@ public class Ch09Controller {
 		// 업로드 경로
 		String saveDirPath = "D:/MyWorkspace/uploadfiles/";
 		File dir = new File(saveDirPath);
-		// 모든 파일 이름을 배열로 저장
+		// 모든 파일 이름을 배열로 저장, File의 String[]로 리턴 받는 list(); 메소드
 		String[] fileNames = dir.list();
 		model.addAttribute("fileNames", fileNames);
 		return "ch09/photolist";
