@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,8 @@ import com.mycompany.webapp.service.Ch13Service2;
 import com.mycompany.webapp.service.Ch13Service3;
 import com.mycompany.webapp.service.Ch13Service4;
 import com.mycompany.webapp.service.Ch13Service5;
+import com.mycompany.webapp.service.Ch13Service6;
+import com.mycompany.webapp.service.Ch13Service7;
 
 			//생략시 기본 클래스 이름의 첫글자소문자
 @Controller("ch13Controller")
@@ -34,6 +37,12 @@ public class Ch13Controller {
 	
 	@Resource
 	private Ch13Service5 service5;
+	
+	@Resource
+	private Ch13Service6 service6;
+	
+	@Resource
+	private Ch13Service7 service7;
 	
 	
 	
@@ -68,7 +77,7 @@ public class Ch13Controller {
 	 
 	 	  }
 	 */
-	
+	//xml을 이용한 주입
 	public void setService3(Ch13Service3 service3) {
 		logger.info("스프링에서 자동으로 메소드 실행3"); 
 		this.service3 = service3;
@@ -119,6 +128,27 @@ public class Ch13Controller {
 		logger.info("서비스5 실행");
 		service5.method();
 		return "redirect:/ch13/content";
+	}
+	
+	
+	@GetMapping("/service6")
+	public String service6() {
+		logger.info("서비스6 실행");
+		service6.method();
+		return "redirect:/ch13/content";
+	}
+	
+
+	
+	@GetMapping("/fileupload")
+	public String fileupload(@Value("${fileupload}") String saveDirpath) {
+		logger.info("파일 실행");
+		
+		logger.info("fileupload : " + saveDirpath);
+		service7.method();
+		
+		return "redirect:/ch13/content";
+		
 	}
 
 }

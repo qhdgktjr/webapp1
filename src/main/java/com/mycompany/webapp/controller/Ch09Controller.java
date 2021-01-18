@@ -55,7 +55,7 @@ public class Ch09Controller {
 			logger.info("contentType : " + contentType);
 			logger.info("size : " + size);
 
-			// 파일 저장이름, 중복이 되서는 안된다. 파일 경로 아직은 절대경로만
+			// 파일 저장이름, 중복이 되서는 안된다. 파일 경로 아직은 절대경로만, 13장에서 배운다.
 			String saveDirPath = "D:/MyWorkspace/uploadfiles/";
 			String fileName = new Date().getTime() + "-" + originalFileName;
 			String filePath = saveDirPath + fileName;

@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 	<!-- xml을 이용한 Setter 주입 -->
 	<!-- id가 같으면 하나만 쓰인다., 클래스 페이지에 @Controller가 있어도 둘중하나로 적용된다 
@@ -20,5 +22,9 @@
 			p:service3-ref="ch13Service3"
 			p:service4-ref="ch13Service4">
 	</bean>
+	
+	<!-- properties 파일 설정, -->
+	<context:property-placeholder
+		location="classpath:properties/*.properties"/>
 	
 </beans>
