@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- xml을 이용한 Setter 주입 -->
+	<!-- id가 같으면 하나만 쓰인다., 클래스 페이지에 @Controller가 있어도 둘중하나로 적용된다 
+		ref="클래스의 id값"	-->
+	<!--  
+		<bean id="ch13Controller"
+			class="com.mycompany.webapp.controller.Ch13Controller">
+			<property name="service3" ref="ch13Service3"></property>
+			<property name="service4" ref="ch13Service4"></property>
+		</bean>
+	-->
+	
+	<bean id="ch13Controller"
+			class="com.mycompany.webapp.controller.Ch13Controller"
+			p:service3-ref="ch13Service3"
+			p:service4-ref="ch13Service4">
+	</bean>
+	
+</beans>
