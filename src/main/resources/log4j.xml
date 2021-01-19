@@ -16,9 +16,9 @@
 	</logger>	
 	
 	<!-- SQL 로깅 -->
-	<!-- <logger name="jdbc.sqltiming">
+ 	<logger name="jdbc.sqltiming">
 		<level value="info" />
-	</logger> -->
+	</logger>
 
 	<root>
 		<priority value="warn" />

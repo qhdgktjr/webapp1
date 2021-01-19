@@ -44,36 +44,76 @@
 
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.30</version>
-		</dependency>
+			<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.7.30</version>
+			</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<!-- 버젼 생략 -->
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<!-- 버젼 생략 -->
+				<artifactId>spring-webmvc</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<!-- 버젼 생략 -->
+				<artifactId>spring-jdbc</artifactId>
+			</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+			<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 			<dependency>
 			    <groupId>javax.servlet</groupId>
 			    <artifactId>jstl</artifactId>
 			    <version>1.2</version>
 			</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+			<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 			<dependency>
 			    <groupId>commons-fileupload</groupId>
 			    <artifactId>commons-fileupload</artifactId>
 			    <version>1.4</version>
 			</dependency>
 					
+			<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-dbcp2</artifactId>
+				<version>2.6.0</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+			<dependency>
+			    <groupId>org.mybatis</groupId>
+			    <artifactId>mybatis</artifactId>
+			    <version>3.5.1</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+			<dependency>
+			    <groupId>org.mybatis</groupId>
+			    <artifactId>mybatis-spring</artifactId>
+			    <version>2.0.1</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/com.googlecode.log4jdbc/log4jdbc -->
+			<dependency>
+			    <groupId>com.googlecode.log4jdbc</groupId>
+			    <artifactId>log4jdbc</artifactId>
+			    <version>1.2</version>
+			</dependency>
+			
+			<dependency>
+			    <groupId>ojdbc</groupId>
+			    <artifactId>ojdbc</artifactId>
+			    <version>6</version>
+			    <scope>system</scope>
+			    <!-- D:/MyWorkspace/projects/web/webapp1/WebContent/WEB-INF/lib/ojdbc6.jar -->
+			    <systemPath>${basedir}/WebContent/WEB-INF/lib/ojdbc6.jar</systemPath>
+			</dependency>
+			
+			
 	</dependencies>
-
-
 
 </project>
