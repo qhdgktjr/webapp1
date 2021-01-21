@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,10 +26,8 @@ public class Ch13Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Ch13Controller.class);
 	
 	// 주입 방법1
-	@Resource
 	private Ch13Service1 service1;
 	
-	@Resource
 	private Ch13Service2 service2;
 	
 	
@@ -51,13 +50,13 @@ public class Ch13Controller {
 	/* 생성자를 만들 후 매개값으로 주입, 
 	  @Autowired 자동적으로 관리하는 객체를 통해 값을 주입 */
 	
-	/*  @Autowired 
+	  @Autowired 
 	  public Ch13Controller(Ch13Service1 service1, Ch13Service2 service2) { 
 	  logger.info("실행");
 	  this.service1 = service1;
 	  this.service2 = service2;
 	  }
-	 */
+	 
 	
 	
 	// 주입 방법3
@@ -74,10 +73,11 @@ public class Ch13Controller {
 	  public void setService2(Ch13Service2 service2) {
 		  logger.info("스프링에서 자동으로 메소드 실행2"); 
 		  this.service2 = service2;
-	 
 	 	  }
 	 */
+	 
 	//xml을 이용한 주입
+	
 	public void setService3(Ch13Service3 service3) {
 		logger.info("스프링에서 자동으로 메소드 실행3"); 
 		this.service3 = service3;
