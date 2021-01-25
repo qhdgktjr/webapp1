@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 자바 객체 매핑, namespace는 바꿔도 된다. -->
+<mapper namespace="mybatis.mapper.emp">
+	<select id="selectByPk" resultType="employee">
+		select employee_id, first_name, last_name
+		from employees
+		where employee_id = #{employee_id}
+	</select>
+</mapper>

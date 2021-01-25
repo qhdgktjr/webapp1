@@ -12,6 +12,7 @@
 		<li class="chapter">Ch08. <a href="<%=application.getContextPath() %>/ch08/content">Data Delivary(Session 이용)</a></li>
 		<li class="chapter">Ch09. <a href="<%=application.getContextPath() %>/ch09/content">File Upload / Download</a></li>
 		<li class="chapter">Ch13. <a href="<%=application.getContextPath() %>/ch13/content">DI(Dependency Injection)</a></li>
+		<li class="chapter">Ch14. <a href="<%=application.getContextPath() %>/ch14/content">Data Access</a></li>
 		
 			
 	</ul>			

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- MyBatis 전체 설정 -->
+<configuration>
+	<typeAliases>
+					<!-- employee.xml에서 사용 -->
+		<typeAlias alias="employee" type="com.mycompany.webapp.dto.Ch14Employee"/>
+	</typeAliases>
+</configuration>
