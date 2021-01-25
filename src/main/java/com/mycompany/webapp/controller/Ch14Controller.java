@@ -179,6 +179,18 @@ public class Ch14Controller {
 			return "ch14/boardlist";
 		}
 		
+		@GetMapping("/boardsave")
+		public String boardsave() {
+			for(int i=1; i<=100; i++) {
+				Ch14Board board = new Ch14Board();
+				board.setBtitle("제목" + i);
+				board.setBcontent("내용" + i);
+				board.setBwriter("winter");
+				boardService.saveBoard(board);
+			}
+			return "redirect:/ch14/boardlist";
+		}
+		
 	
 		
 	

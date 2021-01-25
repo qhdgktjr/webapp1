@@ -26,4 +26,12 @@ public class Ch14BoardDao {
 		return list;
 	}
 	
+	/* 리턴타입이 반영된 행 수 를 나타난다. */
+	public int insert(Ch14Board board) {
+		int rows = sst.insert("mybatis.mapper.boards.insert", board);
+		return rows;
+	}
+	
+
+	
 }

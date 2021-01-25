@@ -26,5 +26,8 @@ public class Ch14BoardService {
 		return list;
 	}
 	
+	public void saveBoard(Ch14Board board) {
+		boardDao.insert(board);
+	}
 	
 }

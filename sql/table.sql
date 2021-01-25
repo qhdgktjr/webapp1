@@ -17,7 +17,7 @@ create table boards(
     battachtype     		varchar(100)     null
 );
 
-create sequence bon_seq;
+create sequence bno_seq;
 
 create table accounts (
     ano         varchar(50)     primary key,

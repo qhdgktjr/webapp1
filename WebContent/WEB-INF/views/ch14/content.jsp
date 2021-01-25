@@ -141,6 +141,7 @@
 								function getEmployee(eid){
 									$.ajax({
 										url: "employee",
+										/* 서버로 보낼 데이터  key : value*/
 										data: {employee_id: eid},
 										success: function(data){
 											$("#eno").html(data.employee_id);
