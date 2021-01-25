@@ -12,9 +12,9 @@ create table boards(
     bwriter                 varchar(20)      references members(mid) on delete cascade,
     bdate                   date             not null,
     bhitcount               number(5)        not null,
-    battachsavefilename     varchar(100)     null,
-    battachorignalfilename  varchar(100)     null,
-    battachcontenttype      varchar(100)     null
+    battachsname     		varchar(100)     null,
+    battachoname  			varchar(100)     null,
+    battachtype     		varchar(100)     null
 );
 
 create sequence bon_seq;
