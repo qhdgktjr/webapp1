@@ -16,10 +16,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mycompany.webapp.dto.Ch14Board;
 import com.mycompany.webapp.dto.Ch14Employee;
+import com.mycompany.webapp.dto.Ch14Pager;
 import com.mycompany.webapp.service.Ch14BoardService;
 import com.mycompany.webapp.service.Ch14EmployeeService;
 
@@ -151,6 +154,7 @@ public class Ch14Controller {
 		*/
 		
 		@GetMapping("/employee")
+							//dto 변수와 같은 이름은 넣어야 한다.
 		public void employee(int employee_id, HttpServletResponse response) throws Exception{
 			Ch14Employee emp = employeeService.getEmployee(employee_id);
 			
@@ -159,8 +163,8 @@ public class Ch14Controller {
 			
 			JSONObject root = new JSONObject();
 			root.put("employee_id", emp.getEmployee_id());
-			root.put("first_name", emp.getEmployee_id());
-			root.put("last_name", emp.getEmployee_id());
+			root.put("first_name", emp.getFirst_name());
+			root.put("last_name", emp.getLast_name());
 			
 			String json = root.toString();
 			pw.println(json);
@@ -179,6 +183,19 @@ public class Ch14Controller {
 			return "ch14/boardlist";
 		}
 		
+		@GetMapping("/boardlist2")
+		public String boardlist2(
+				/* 페이지 번호가 안넘어 오면 기본값으로 1 		사용자가 원하는 페이지 번호*/
+				@RequestParam(defaultValue="1") int pageNo, Model model) {
+			int totalRows = boardService.getTotalRows();
+			Ch14Pager pager = new Ch14Pager(6, 5, totalRows, pageNo);
+			
+			List<Ch14Board> list = boardService.getBoardList(pager);
+			model.addAttribute("list", list);
+			model.addAttribute("pager", pager);
+			return "ch14/boardlist";
+		}
+		
 		@GetMapping("/boardsave")
 		public String boardsave() {
 			for(int i=1; i<=100; i++) {
@@ -191,8 +208,17 @@ public class Ch14Controller {
 			return "redirect:/ch14/boardlist";
 		}
 		
-	
+		@GetMapping("/boardwrite")
+		public String boardwriteForm() {
+			return "ch14/boardwrite";
+		}
 		
+	
+		@PostMapping("boardwrite")
+		public String boardwrite(Ch14Board board) {
+			boardService.saveBoard(board);
+			return "redirect:/ch14/boardlist2";
+		}
 	
 
 

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.mycompany.webapp.dao.Ch14BoardDao;
 import com.mycompany.webapp.dto.Ch14Board;
+import com.mycompany.webapp.dto.Ch14Pager;
 
 
 @Service
@@ -25,9 +26,19 @@ public class Ch14BoardService {
 		List<Ch14Board> list = boardDao.selectAll();
 		return list;
 	}
-	
 	public void saveBoard(Ch14Board board) {
 		boardDao.insert(board);
+	}
+	
+	public List<Ch14Board> getBoardList(Ch14Pager pager){
+		List<Ch14Board> list = boardDao.selectByPage(pager);
+		return list;
+	}
+	
+	
+	public int getTotalRows() {
+		int totalRows = boardDao.countAll();
+		return totalRows;
 	}
 	
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="members">
+									<!-- 소문자로 작성, 값이 하나면 생략해도 된다. -->
+	<select id="selectByPk" parameterType="string">
+		select mid, mname, mpassword
+		from members
+		<!-- {}안의 값은 아무거나 상관없다 -->
+		where mid=#{mid}
+	</select>
+</mapper>

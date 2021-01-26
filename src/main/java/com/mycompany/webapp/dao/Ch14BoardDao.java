@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.mycompany.webapp.dto.Ch14Board;
+import com.mycompany.webapp.dto.Ch14Pager;
 
 @Repository
 public class Ch14BoardDao {
@@ -22,14 +23,24 @@ public class Ch14BoardDao {
 	
 	
 	public List<Ch14Board> selectAll(){
-		List<Ch14Board> list = sst.selectList("mybatis.mapper.boards.selectAll");
+		List<Ch14Board> list = sst.selectList("boards.selectAll");
 		return list;
+	}
+	
+	public int countAll() {
+		int count = sst.selectOne("boards.countAll");
+		return count;
 	}
 	
 	/* 리턴타입이 반영된 행 수 를 나타난다. */
 	public int insert(Ch14Board board) {
-		int rows = sst.insert("mybatis.mapper.boards.insert", board);
+		int rows = sst.insert("boards.insert", board);
 		return rows;
+	}
+
+	public List<Ch14Board> selectByPage(Ch14Pager pager) {
+		List<Ch14Board> list = sst.selectList("boards.selecByPage", pager);
+		return list;
 	}
 	
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mybatis.mapper.boards">
+<mapper namespace="boards">
 	<select id="selectAll" resultType="board">
 		select 
 			bno,
@@ -9,7 +9,48 @@
 			bhitcount,
 			bdate
 		from boards
+		order by bno desc
 	</select>
+	
+	<select id="countAll" resultType="int">
+		select count(*)
+		from boards
+	
+	
+	</select>
+	<!-- 각 괄호는 항상 태그의 시작이다. 연산기호가 안된다. ~보다 적다 &lt;, ~보다 크다 &gt;-->
+	<!-- 줘야하는 데이터와 받아야하는 데이터가 있어서 두가지 활용 				보드 객체의 리스트를 받고 싶다.-->
+	<select id="selecByPage" parameterType="pager" resultType="board">
+			select rno,
+			   			bno,
+						btitle,
+						bwriter,
+						bhitcount,
+						bdate
+			from (
+			    select rownum as rno,
+			   			bno,
+						btitle,
+						bwriter,
+						bhitcount,
+						bdate
+			    from (
+			            select 
+							bno,
+							btitle,
+							bwriter,
+							bhitcount,
+							bdate
+						from boards
+						order by bno desc
+			    )
+			    where rownum &lt;= #{endRowNo}
+			)
+			where rno &gt;= #{startRowNo}
+	
+	</select>
+	
+	
 					<!-- 객체를 받아서 DB에 보내기, board 작성자가 작성한 내용이 들어간다. -->
 	<insert id="insert" parameterType="board">
 	<!-- not null은 값이 들어가야한다. -->
@@ -17,7 +58,7 @@
 		(bno, btitle, bcontent, bwriter, bdate, bhitcount)
 		
 		values
-						
+						<!-- board가 가지고 있는 getter -->
 		(bno_seq.nextval, #{btitle}, #{bcontent}, #{bwriter}, sysdate, 0)
 	
 	</insert>

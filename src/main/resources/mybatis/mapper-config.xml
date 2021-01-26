@@ -9,5 +9,6 @@
 					<!-- employee.xml에서 사용 -->
 		<typeAlias alias="employee" type="com.mycompany.webapp.dto.Ch14Employee"/>
 		<typeAlias alias="board" type="com.mycompany.webapp.dto.Ch14Board"/>
+		<typeAlias alias="pager" type="com.mycompany.webapp.dto.Ch14Pager"/>
 	</typeAliases>
 </configuration>
