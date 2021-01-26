@@ -26,28 +26,22 @@
 				<div class="content">
 					<div class="sector">
 						<div class="alert alert-primary" role="alert">
-							글쓰기
+							게시물 수정
 						</div>
-						<form enctype="multipart/form-data" name="boardwriteform" action="boardwrite" method="post">
-														
+						<form name="boardupdateform" action="boardupdate" method="post">
+							<input type="hidden" name="bno" value="${board.bno}"/>					
 							<div class="form-group">
 							    <label for="btitle">제목</label>
-							    <input type="text" class="form-control" id="btitle" name="btitle">
-							    <small class="form-text text-muted">필수 입력 사항입니다.</small>
+							    <input type="text" value="${board.btitle}" class="form-control" id="btitle" name="btitle">
 							</div>
-							  
+							
+							
 							<div class="form-group">
 							    <label for="bcontent">내용</label>
-							    <textarea class="form-control" id="bcontent" name="bcontent" rows="5" cols="50"></textarea>
+							    <textarea class="form-control" id="bcontent" name="bcontent" rows="5" cols="50">${board.bcontent}</textarea>
 							</div>
-							
-							<div class="form-group">
-							    <label for="battach">첨부</label>
-							    <input type="file" id="battach" name="battach"/>
-							</div>
-							
-							  <button class="btn btn-primary">저 장</button>
-							  <a href="boardlist2" class="btn btn-primary">취 소</a>
+							  <a href="boardlist2" class="btn btn-primary">목록</a>
+							  <button>수정</button>
 						</form>
 					</div>
 					

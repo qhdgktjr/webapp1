@@ -42,6 +42,26 @@ public class Ch14BoardDao {
 		List<Ch14Board> list = sst.selectList("boards.selecByPage", pager);
 		return list;
 	}
+
+	public Ch14Board selectByPk(int bno) {
+		Ch14Board board = sst.selectOne("boards.selectByPk", bno);
+		return board;
+	}
+
+	public int update(Ch14Board board) {
+		int rows = sst.update("boards.update", board);
+		return rows;
+	}
+
+	public int delete(int bno) {
+		int rows = sst.delete("boards.delete", bno);
+		return rows;
+	}
+
+	public int updateHitcount(int bno) {
+		int rows = sst.update("boards.updateHitcount", bno);
+		return rows;
+	}
 	
 
 	

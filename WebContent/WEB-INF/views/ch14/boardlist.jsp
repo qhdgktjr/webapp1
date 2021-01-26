@@ -41,8 +41,8 @@
 								  <c:forEach var="board" items="${list}">
 									  <tr>
 									      <td>${board.bno}</td>
-									      <td>${board.btitle}</td>
-									      <td>${board.bwriter}</td>
+									      <td><a class="text-warning text-decoration-none" href="boardread?bno=${board.bno}">${board.btitle}</a></td>
+									      <td><img class="rounded-circle" src="mphoto?mid=${board.bwriter}" width="30px;"></td>
 									      <td>${board.bhitcount}</td>
 									      <td><fmt:formatDate value="${board.bdate}" pattern="yyyy.MM.dd"/></td>
 									  </tr>
@@ -50,7 +50,12 @@
 								  </tbody>
 								  </table>
 										<div class="d-flex align-items-center justify-content-between">
-											<a class="btn btn-primary btn-sm" href="boardwrite">글쓰기</a>
+											<c:if test="${sessionMid != null}">
+												<a class="btn btn-primary btn-sm" href="boardwrite">글쓰기</a>
+											</c:if>
+											<c:if test="${sessionMid == null}">
+												<span></span>
+											</c:if>
 											<div>
 											  <a class="btn btn-outline-warning btn-sm mr-1" href="boardlist2?pageNo=1">처음</a>
 												  	<c:if test="${pager.groupNo > 1}">

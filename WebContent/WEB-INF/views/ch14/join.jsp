@@ -26,26 +26,32 @@
 				<div class="content">
 					<div class="sector">
 						<div class="alert alert-primary" role="alert">
-							글쓰기
+							회원가입
 						</div>
-						<form enctype="multipart/form-data" name="boardwriteform" action="boardwrite" method="post">
-														
+						<form enctype="multipart/form-data" name="joinform" action="join" method="post" style="width:300px;">
 							<div class="form-group">
-							    <label for="btitle">제목</label>
-							    <input type="text" class="form-control" id="btitle" name="btitle">
+							    <label for="mid">아이디</label>
+							    <input type="text" class="form-control" id="mid" name="mid">
+							    <small class="form-text text-muted">필수 입력 사항입니다.</small>
+						  	</div>
+							
+							<div class="form-group">
+							    <label for="mname">이름</label>
+							    <input type="text" class="form-control" id="mname" name="mname">
 							    <small class="form-text text-muted">필수 입력 사항입니다.</small>
 							</div>
 							  
 							<div class="form-group">
-							    <label for="bcontent">내용</label>
-							    <textarea class="form-control" id="bcontent" name="bcontent" rows="5" cols="50"></textarea>
+							    <label for="mpassword">비밀번호</label>
+							     <input type="password" class="form-control" id="mpassword" name="mpassword">
+							     <small class="form-text text-muted">필수 입력 사항입니다.</small>
 							</div>
 							
 							<div class="form-group">
-							    <label for="battach">첨부</label>
-							    <input type="file" id="battach" name="battach"/>
+							    <label for="mphoto">프로필사진</label>
+							     <input type="file" id="mphoto" name="mphoto">
+							     <small class="form-text text-muted">심심하면 하세요.</small>
 							</div>
-							
 							  <button class="btn btn-primary">저 장</button>
 							  <a href="boardlist2" class="btn btn-primary">취 소</a>
 						</form>

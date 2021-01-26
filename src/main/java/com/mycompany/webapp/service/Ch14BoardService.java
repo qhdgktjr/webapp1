@@ -40,5 +40,21 @@ public class Ch14BoardService {
 		int totalRows = boardDao.countAll();
 		return totalRows;
 	}
+	public Ch14Board getBoard(int bno) {
+		Ch14Board board = boardDao.selectByPk(bno);
+		return board;
+	}
+	public void updateBoard(Ch14Board board) {
+		boardDao.update(board);
+	}
+	public void deleteBoard(int bno) {
+		boardDao.delete(bno);
+		
+	}
+	public void addHitcount(int bno) {
+		boardDao.updateHitcount(bno);
+		
+	}
+
 	
 }
