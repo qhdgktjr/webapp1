@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.mycompany.webapp.dao.Ch14OrderDao;
 import com.mycompany.webapp.dto.Ch14Order;
@@ -22,6 +23,7 @@ public class Ch14OrderService {
 	@Resource
 	private Ch14OrderDao orderDao;
 	
+	@Transactional
 	public void order(Ch14Order order, List<Ch14OrderItem> orderItem) {
 		//orders 테이블에 주문 정보를 저장, 실행 후 ono를 알 수 있다.
 		orderDao.insertOrder(order);
