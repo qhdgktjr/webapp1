@@ -7,6 +7,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,10 +32,13 @@ import org.springframework.web.multipart.MultipartFile;
 import com.mycompany.webapp.dto.Ch14Board;
 import com.mycompany.webapp.dto.Ch14Employee;
 import com.mycompany.webapp.dto.Ch14Member;
+import com.mycompany.webapp.dto.Ch14Order;
+import com.mycompany.webapp.dto.Ch14OrderItem;
 import com.mycompany.webapp.dto.Ch14Pager;
 import com.mycompany.webapp.service.Ch14BoardService;
 import com.mycompany.webapp.service.Ch14EmployeeService;
 import com.mycompany.webapp.service.Ch14MemberService;
+import com.mycompany.webapp.service.Ch14OrderService;
 
 			//생략시 기본 클래스 이름의 첫글자소문자
 @Controller("ch14Controller")
@@ -409,7 +413,36 @@ public class Ch14Controller {
 			
 		}
 		
+		@Resource
+		private Ch14OrderService orderService;
 		
+		@GetMapping("/order")
+		public String order() {
+			//주문 정보 얻기
+			Ch14Order order = new Ch14Order();
+			order.setMid("winter");
+			order.setAddress("서울시 송파구 ");
+			
+			//주문 상품 정보 얻기 (장바구니에서 가져오기)
+			
+			List<Ch14OrderItem> OrderItems = new ArrayList<>();
+			Ch14OrderItem oi1 = new Ch14OrderItem();
+			oi1.setPid("다이아몬드");
+			oi1.setAmount(100);
+			OrderItems.add(oi1);
+			
+			Ch14OrderItem oi2 = new Ch14OrderItem();
+			oi2.setPid("내 집");
+			oi2.setAmount(10);
+			OrderItems.add(oi2);
+			
+			//주문 처리
+			orderService.order(order, OrderItems);
+			
+			
+			
+			return "ch14/content";
+		}
 
 	
 

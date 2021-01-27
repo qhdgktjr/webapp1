@@ -11,5 +11,7 @@
 		<typeAlias alias="board" type="com.mycompany.webapp.dto.Ch14Board"/>
 		<typeAlias alias="pager" type="com.mycompany.webapp.dto.Ch14Pager"/>
 		<typeAlias alias="member" type="com.mycompany.webapp.dto.Ch14Member"/>
+		<typeAlias alias="order" type="com.mycompany.webapp.dto.Ch14Order"/>
+		<typeAlias alias="orderitem" type="com.mycompany.webapp.dto.Ch14OrderItem"/>
 	</typeAliases>
 </configuration>
